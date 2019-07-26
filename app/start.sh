@@ -12,7 +12,7 @@ echo $HNAME > /etc/hostname
 hostname $HNAME
 
 # changing xwrapper config to run for any user
-sed -i -e 's/console/anybody/g' /etc/X11/Xwrapper.config
+echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 
 # adding user to run chromium since it will not run as root
 useradd chromium -m -s /bin/bash -G root
